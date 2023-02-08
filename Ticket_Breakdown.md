@@ -16,3 +16,20 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+
+
+1. Database: Add custom id to agents table
+	- Ticket description: Facilities want to be able to add their own custom ids for each agent. A new field "customId" should be added to the agents table to allow for each agent to have their own custom id. The field can be initialized as an empty string.
+	- Acceptance criteria: Agents table has a new field "customId". This field is of type string.
+	- Effort estimate: 1
+
+2. Backend: Add function editAgentCustomId
+	- Ticket description: Facilities want to be able to add their own custom ids for each agent. The "updateMyAgents" endpoint should be extended to allow the new property "customId" for each agent.
+	- Acceptance criteria: "updateMyAgents" endpoint which already takes in an array of Agent objects will be extended to allow for the new property "customId" which is of type string. Any interface definitions of the agent object will be extended to include the new string "customId". When the "updateMyAgents" is called all relevant agents with the same internal id will have their fields updated to match incoming data including the new "customId" field.
+	- Effort estimate: 2
+
+3. FrontEnd: Add ability to edit custom id on facility platform
+	- Ticket description: Facilities want to be able to add their own custom ids for each agent. The agent view page should be extended to alow edits to the the new custom id field
+	- Acceptance criteria: Authenticated facilities should have the ability to edit the new "customId" field in the front end portal, this can be done by going to the "My Agents" page of the dashboard and inputting a new string on a new column labeled "ID" of each agent row. This column should be the first column in the row. Upon clicking  the save button, all changed data will be updated as previous by calling the "updateMyAgents" endpoint along with the new property on each user object "customId"
+  - Effort estimate: 3
+

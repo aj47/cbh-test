@@ -9,3 +9,12 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+ 1. I added a JSDoc style comment header above the function explaining the expected functionality, expected input parameter and expected return value
+
+ 2. I added an early check for an empty/undefined input and returned the trivial key as it is unnecessary to do other logic if so
+
+ 3. I initialized the candidate value to the potential partition key key value from input to reduce repetition of initializing it later
+ 
+ 4. I added a ternary operator to the return value to ensure the type is string
+
+ 5. I also added some one line comments in the validation logic to explain and used my Linter (prettier) to indent the crypto methods nicely so it can be read on narrow windows. 
